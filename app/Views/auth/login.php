@@ -8,14 +8,21 @@
   </h1>
   <h2 class="text-3xl font-semibold text-center">Masuk atau buat akun <br> untuk memulai</h2>
 
-  <!-- Menampilkan pesan notifikasi sukses jika ada -->
+  <!-- Menampilkan pesan sukses -->
   <?php if (session()->getFlashdata('success')): ?>
     <div class="bg-green-100 text-green-700 p-4 mb-4 rounded-md">
       <?= session()->getFlashdata('success'); ?>
     </div>
   <?php endif; ?>
-  
-  <form method="post" action="/registration" class="flex flex-col gap-4 ">
+
+  <!-- Menampilkan pesan error -->
+  <?php if (session()->getFlashdata('error')): ?>
+    <div class="bg-red-100 text-red-700 p-4 mb-4 rounded-md">
+      <?= session()->getFlashdata('error'); ?>
+    </div>
+  <?php endif; ?>
+
+  <form method="post" action="/login" class="flex flex-col gap-4 ">
 
     <!-- Input Email -->
     <?= view('components/input_field', [

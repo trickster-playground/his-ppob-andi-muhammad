@@ -9,8 +9,10 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Load DaisyUI -->
-  <script src="https://cdn.jsdelivr.net/npm/daisyui@1.15.0/dist/full.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
 
   <style>
     html,
@@ -26,15 +28,19 @@
 <body>
   <!-- Header atau elemen yang sama di setiap halaman -->
   <header>
+    <?= view('components/navbar') ?>
 
+    <!-- Full width divider -->
+    <div class="border-t border-primary w-screen"></div>
   </header>
+
 
   <!-- Konten dinamis dari halaman tertentu -->
   <?= $this->renderSection('content'); ?>
 
   <!-- Footer atau elemen yang sama di setiap halaman -->
   <footer>
-    <p>&copy; 2025 HIS PPOB</p>
+
   </footer>
 </body>
 
