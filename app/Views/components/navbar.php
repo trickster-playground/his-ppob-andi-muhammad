@@ -8,7 +8,7 @@
 
     <!-- Menu -->
     <nav class="flex gap-10 text-xl font-semibold text-gray-700">
-      <a href="/homepage" >Top Up</a>
+      <a href="/topup" >Top Up</a>
       <a href="/topup" >Transaction</a>
       <a href="/profile" >Akun</a>
     </nav>

@@ -2,9 +2,10 @@
 
 namespace App\Controllers;
 
+use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 
-class Home extends BaseController
+class Topup extends BaseController
 {
   public function index(): ResponseInterface
   {
@@ -14,22 +15,7 @@ class Home extends BaseController
 
     $client = \Config\Services::curlrequest();
 
-    // Get Banner
-    $responseBanner = $client->get('https://take-home-test-api.nutech-integrasi.com/banner');
-    $dataBanner = json_decode($responseBanner->getBody(), true);
-    $banners = $dataBanner['data'] ?? [];
-
     $token = session('token');
-
-    // Get Services 
-    $responseServices = $client->get('https://take-home-test-api.nutech-integrasi.com/services', [
-      'headers' => [
-        'Authorization' => 'Bearer ' . $token,
-        'Accept' => 'application/json',
-      ],
-    ]);
-    $dataServices = json_decode($responseServices->getBody(), true);
-    $services = $dataServices['data'] ?? [];
 
     // Get Balance
     $responseBalance = $client->get('https://take-home-test-api.nutech-integrasi.com/balance', [
@@ -41,9 +27,7 @@ class Home extends BaseController
     $dataBalance = json_decode($responseBalance->getBody(), true);
     $balance = $dataBalance['data']['balance'] ?? 0;
 
-    return $this->response->setBody(view('homepage', [
-      'banners' => $banners,
-      'services' => $services,
+    return $this->response->setBody(view('topup', [
       'balance'  => $balance,
     ]));
   }

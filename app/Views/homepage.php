@@ -2,42 +2,14 @@
 
 <?= $this->section('content'); ?>
 <div>
-  <?php if (session()->getFlashdata('success')): ?>
-    <div class="bg-green-100 text-green-700 p-4 mb-4 rounded-md">
-      <?= session()->getFlashdata('success'); ?>
-    </div>
-  <?php endif; ?>
+  <?= view('components/alert') ?>
 
-  <div class="flex items-center justify-between px-2 mb-6 max-w-7xl mx-auto">
-    <div class="flex flex-col items-start p-3 max-w-4xl">
-      <!-- Foto Profil -->
-      <div class="flex justify-center mb-4">
-        <img
-          src="<?= base_url('assets/images/Profile Photo.png'); ?>"
-          alt="Foto Profil"
-          class="w-25 h-25 rounded-full object-cover border-2 border-primary" />
-      </div>
-
-      <!-- Informasi pengguna -->
-      <div class=" flex flex-col items-start">
-        <!-- Pesan Selamat Datang -->
-        <h2 class="text-xl ">Selamat Datang,</h2>
-        <h3 class="text-4xl font-semibold "><?= session()->get('first_name') ?? 'Nama Depan'; ?> <?= session()->get('last_name') ?? 'Nama Belakang'; ?></h3>
-      </div>
-    </div>
-
-
-    <!-- Banner Saldo  -->
-    <div class="flex-none w-3/5 ">
-      <img
-        src="<?= base_url('assets/images/Background Saldo.png'); ?>"
-        alt="Banner"
-        class="w-full h-auto rounded-lg" />
-    </div>
-  </div>
+  <?php
+  include('components/profile_balance.php');
+  ?>
 
   <!-- Services -->
-  <div class="mt-10 max-w-7xl mx-auto">
+  <div class="mt-6 max-w-7xl mx-auto p-4">
     <h1 class="text-lg font-semibold mb-4">Layanan Kami</h1>
     <div class="grid grid-cols-12 gap-2">
       <?php foreach ($services as $service): ?>
@@ -67,7 +39,5 @@
   </div>
 
 </div>
-
-
 
 <?= $this->endSection(); ?>

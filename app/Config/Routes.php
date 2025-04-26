@@ -15,3 +15,4 @@ $routes->get('/logout', 'Auth::logout');
 
 $routes->get('/homepage', 'Home::index');
 $routes->get('/profile', 'Profile::index');
+$routes->get('/topup', 'Topup::index');
