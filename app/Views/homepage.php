@@ -4,19 +4,17 @@
 <div>
   <?= view('components/alert') ?>
 
-  <?php
-  include('components/profile_balance.php');
-  ?>
+  <?= view('components/profile_balance') ?>
 
   <!-- Services -->
   <div class="mt-6 max-w-7xl mx-auto p-4">
     <h1 class="text-lg font-semibold mb-4">Layanan Kami</h1>
     <div class="grid grid-cols-12 gap-2">
       <?php foreach ($services as $service): ?>
-        <div class="flex flex-col items-center col-span-1">
+        <a href="<?= site_url('transaction/payment/' . $service['service_code']) ?>" class="flex flex-col items-center col-span-1 hover:bg-gray-100 p-2 rounded-md transition">
           <img src="<?= esc($service['service_icon']); ?>" alt="<?= esc($service['service_name']); ?>" class="w-18 h-18 mb-2 object-cover" />
           <span class="text-center text-sm"><?= esc($service['service_name']); ?></span>
-        </div>
+        </a>
       <?php endforeach; ?>
     </div>
   </div>

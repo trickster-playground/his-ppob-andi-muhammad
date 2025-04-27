@@ -19,14 +19,22 @@
     body {
       height: 100%;
       margin: 0;
-      padding: 0; 
+      padding: 0;
       overflow: hidden;
+    }
+
+    /* Membuat elemen dengan ID .page-transaction dapat menggulir */
+    .page-transaction {
+      overflow-y: auto;
+      /* memungkinkan scroll vertikal */
+      max-height: 90vh;
+      /* batasan tinggi yang sesuai, Anda bisa menyesuaikan */
     }
   </style>
 </head>
 
 <body>
-  <!-- Header atau elemen yang sama di setiap halaman -->
+  <!-- Header -->
   <header>
     <?= view('components/navbar') ?>
 
@@ -35,10 +43,10 @@
   </header>
 
 
-  <!-- Konten dinamis dari halaman tertentu -->
+  <!-- Konten dinamis-->
   <?= $this->renderSection('content'); ?>
 
-  <!-- Footer atau elemen yang sama di setiap halaman -->
+  <!-- Footer -->
   <footer>
 
   </footer>

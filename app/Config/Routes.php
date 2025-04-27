@@ -20,3 +20,6 @@ $routes->get('/topup', 'Topup::index');
 $routes->post('/topup', 'Topup::store');
 
 $routes->get('/transaction/history', 'Transaction::index');
+$routes->get('/transaction/loadMoreTransactions', 'Transaction::loadMoreTransactions');
+$routes->get('/transaction/payment/(:segment)', 'Transaction::payment/$1');
+$routes->post('/transaction', 'Transaction::store');

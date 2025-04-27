@@ -22,7 +22,7 @@
     ]) ?>
   <?php endif; ?>
 
-  <?php include('components/profile_balance.php'); ?>
+  <?= view('components/profile_balance') ?>
 
   <div class="flex flex-col justify-center items-start p-5 max-w-7xl mx-auto">
     <div class="flex flex-col items-start">
