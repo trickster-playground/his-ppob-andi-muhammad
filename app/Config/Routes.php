@@ -18,3 +18,5 @@ $routes->get('/profile', 'Profile::index');
 
 $routes->get('/topup', 'Topup::index');
 $routes->post('/topup', 'Topup::store');
+
+$routes->get('/transaction/history', 'Transaction::index');
