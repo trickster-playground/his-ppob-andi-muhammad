@@ -21,12 +21,15 @@ $alertClasses = [
 <?php foreach (['success', 'error', 'warning'] as $type): ?>
   <?php $message = session()->getFlashdata($type); ?>
   <?php if ($message): ?>
-    <div class="flex justify-center items-center w-full max-w-7xl mx-auto px-2 mt-2">
-      <div id="alert-<?= $type ?>" role="alert" class="alert w-full <?= $alertClasses[$type] ?? 'alert-info' ?> mb-4">
+    <div class="fixed ml-2 top-4 left-1/2 -translate-x-1/2 z-50 w-auto mx-auto px-4">
+      <div id="alert-<?= $type ?>" role="alert" class="bg-blue-500 text-white p-4 rounded-md shadow-lg flex items-center gap-2">
         <?= $icons[$type] ?? '' ?>
         <span><?= esc($message) ?></span>
       </div>
     </div>
+
+
+
 
     <script>
       setTimeout(() => {

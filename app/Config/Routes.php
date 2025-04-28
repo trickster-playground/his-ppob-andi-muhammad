@@ -15,6 +15,9 @@ $routes->get('/logout', 'Auth::logout');
 
 $routes->get('/homepage', 'Home::index');
 $routes->get('/profile', 'Profile::index');
+$routes->get('/profile', 'Profile::index');
+$routes->post('/profile/update', 'Profile::profileUpdate');
+$routes->post('/profile/image', 'Profile::profileImage');
 
 $routes->get('/topup', 'Topup::index');
 $routes->post('/topup', 'Topup::store');
